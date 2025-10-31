@@ -1,0 +1,75 @@
+Application Programming Interface (API) - a method for two
+devices to communicate with each other in a request, response
+manner.
+    - In practice, you write code to request data from a server.
+
+Most API's are RESTful; meaning they follow a set of rules
+called Representational State Transfer. A RESTful API organizes data
+entities or resources into a bunch of unique urls (techinically uniform
+resource identifiers (uri's) that differentiate different types of data
+resources on a server). 
+
+A client can get data about a resource by making a request to an endpoint 
+over http; the request message has a very specific format.
+
+    URI:
+        POST /dinosaur
+
+        Accept: application/json
+        Authorization: <token>
+        Connection: keep-alive
+        {
+            "face": "(alligator emoji)"
+        }
+
+        1. Verb/request method: A GET request means you just want to read
+        the data, POST means you want to create a new resource, PATCH is 
+        for updates, DELETE is for removing data, and some other methods 
+        below the start line.
+
+        2. /dinosaur -> URI
+
+        3. Headers contain metadata about the request
+        - the accept header can tell the server you want the data in a 
+        specific format
+        - the authorization header can be used to tell the server that
+        you're actually allowedt to make that request
+
+        4. The body contains a custom payload of data; the server will 
+        receive the request message then execute some code (usually to 
+        read from a database that can then be formatted into a response 
+        message).
+            {
+                ... -> Body
+            }
+
+The request method then executes some code usually to read from a database
+that can then be formatted into a response message.
+            
+    Ex. Message:
+        HTTP/1.1 200 OK
+
+        Server: nginx
+        Age: 2323
+        Connection: keep-alive
+        
+        {
+            "id": "123-xyz",
+            "status": "success",
+        }
+
+        1. Status Codes:
+            2** -> Good
+            4** -> You messed up
+            5** -> Server Broken
+
+        2. Response headers, such as Server, Age, Connection, that contain 
+        information about the server.
+
+        3. Response body; { }, which contains the data payload
+
+* The request, response architecture is stateless, which means neither
+party needs to store information about eachother, and every request-response
+cycle is independent of all other communication *
+
+Best Framework for build REST API's : Express Node.js
