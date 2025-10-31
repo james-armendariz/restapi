@@ -73,3 +73,12 @@ party needs to store information about eachother, and every request-response
 cycle is independent of all other communication *
 
 Best Framework for build REST API's : Express Node.js
+
+package.json: context for installing packages that we 
+can use in Node like Express
+
+There are many ways to access your API:
+    - curl http://localhost:8080 [from the command line]
+    - VS code extension
+    - Use a REST client like insomnia (what we'll be using) or postman
+
