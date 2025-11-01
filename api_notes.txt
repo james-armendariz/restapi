@@ -81,4 +81,3 @@ There are many ways to access your API:
     - curl http://localhost:8080 [from the command line]
     - VS code extension
     - Use a REST client like insomnia (what we'll be using) or postman
-

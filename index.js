@@ -53,12 +53,12 @@ app.post('/tshirt/:id', (req, res) => {
     }
 
     res.send({
-        tshirt: 'tshirtemoji with your ${logo} and ID of ${id}',
+        tshirt: `tshirtemoji with your ${logo} and ID of ${id}`,
     });
 });
 
 // Listen  on specified port (to fire up the API)
 app.listen(
     PORT,
-    () => console.log('its alive on http://localhost:${PORT}')
+    () => console.log(`its alive on http://localhost:${PORT}`)
 );
